@@ -3,7 +3,7 @@
     <v-text-field v-model="pokemon" label="pokemon"></v-text-field>
     <v-btn @click="search">search</v-btn>
     <v-card>
-      <v-img width="100px" :src="pic"></v-img>
+      <v-img width="300px" :src="pic"></v-img>
       <v-card-title v-if="test">{{ res.species.name }}</v-card-title>
       <v-card-text v-if="test">id:{{ res.id }}</v-card-text>
       <v-card-text v-if="test">
