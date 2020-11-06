@@ -1,5 +1,19 @@
 <template>
-  <div>
+  <v-container fill-height>
+    <v-app-bar
+      absolute
+      elevate-on-scroll
+      scroll-target="#scrolling-techniques-7"
+    >
+      <v-toolbar-title class="orange--text">頁面切換</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn :to="{ path: 'plz' }" nuxt class="orange--text">
+        <v-icon color="red">mdi-heart</v-icon>
+        回按鈕頁面
+      </v-btn>
+    </v-app-bar>
     <v-text-field v-model="pokemon" label="pokemon"></v-text-field>
     <v-btn @click="search">search</v-btn>
     <v-card>
@@ -33,7 +47,7 @@
         <span>{{ res.stats[2]['base_stat'] }}</span>
       </v-card-text>
     </v-card>
-  </div>
+  </v-container>
 </template>
 
 <script>
