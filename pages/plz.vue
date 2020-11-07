@@ -1,19 +1,5 @@
 <template>
-  <v-container fill-height>
-    <v-app-bar
-      absolute
-      elevate-on-scroll
-      scroll-target="#scrolling-techniques-7"
-    >
-      <v-toolbar-title class="orange--text">頁面切換</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn :to="{ name: 'index' }" nuxt class="orange--text">
-        <v-icon color="red">mdi-heart</v-icon>
-        回搜尋頁面
-      </v-btn>
-    </v-app-bar>
+  <v-container>
     <v-row>
       <v-col cols="12" md="6">
         <v-subheader>屬性</v-subheader>
@@ -49,9 +35,9 @@
         <v-col cols="12" md="6">
           <v-sheet elevation="10" class="pa-4">
             <v-chip-group
+              v-model="chosPoke"
               column
               active-class="primary--text"
-              v-model="chosPoke"
             >
               <v-chip v-for="tag in chosseablePoke" :key="tag">
                 {{ tag }}
