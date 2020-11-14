@@ -1,10 +1,8 @@
 <template>
   <v-container>
-    <v-row>
+    <v-row justify="center">
       <v-col cols="12" md="6">
         <v-subheader>屬性</v-subheader>
-      </v-col>
-      <v-col cols="12" md="6">
         <v-select
           v-model="chosAPI.chosAttr"
           :items="attributes"
@@ -13,11 +11,7 @@
           prepend-icon="mdi-map"
           :menu-props="{ maxHeight: '400' }"
         ></v-select>
-      </v-col>
-      <v-col cols="12" md="6">
-        <v-subheader>地區</v-subheader>
-      </v-col>
-      <v-col cols="12" md="6">
+        <v-subheader class="text--center">地區</v-subheader>
         <v-select
           v-model="chosAPI.chosReg"
           :items="regions"
@@ -26,29 +20,24 @@
           prepend-icon="mdi-map"
           :menu-props="{ maxHeight: '400' }"
         ></v-select>
-      </v-col>
-      <v-col cols="12" md="6">
         <v-btn @click="search">
           <v-icon>mdi-magnify</v-icon>
           搜尋
         </v-btn>
-        <v-col cols="12" md="6">
-          <v-sheet elevation="10" class="pa-4">
-            <v-chip-group
-              v-model="chosPoke"
-              column
-              active-class="primary--text"
-            >
-              <v-chip v-for="tag in chosseablePoke" :key="tag">
-                {{ tag }}
-              </v-chip>
-            </v-chip-group>
-            <v-btn @click="search1">go</v-btn>
-          </v-sheet>
-        </v-col>
       </v-col>
-      <v-col col="6">
-        <v-card>
+
+      <v-col cols="12" md="6" class="d-flex align-center">
+        <v-sheet elevation="3" class="pa-4">
+          <v-chip-group v-model="chosPoke" column active-class="primary--text">
+            <v-chip v-for="tag in chosseablePoke" :key="tag">
+              {{ tag }}
+            </v-chip>
+          </v-chip-group>
+          <v-btn @click="search1">go</v-btn>
+        </v-sheet>
+      </v-col>
+      <v-col col="6" offset-md="4">
+        <v-card max-width="400">
           <v-img width="100px" :src="pic"></v-img>
           <v-card-title v-if="test">{{ res.species.name }}</v-card-title>
           <v-card-text v-if="test">id:{{ res.id }}</v-card-text>
