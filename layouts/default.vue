@@ -2,12 +2,11 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="orange--text">頁面切換</v-toolbar-title>
-
       <v-spacer></v-spacer>
       <v-btn @click="light" class="mr-2">
         <v-icon>mdi-brightness-6</v-icon>
-        {{ this.$vuetify.theme.dark ? '開' : '關' }}燈</v-btn
-      >
+        {{ this.$vuetify.theme.dark ? '開' : '關' }}燈
+      </v-btn>
       <v-btn :to="{ name: routername.name }" nuxt class="orange--text">
         <v-icon color="red">mdi-heart</v-icon>
         {{ `回${routername.route}頁面` }}
@@ -32,10 +31,6 @@ export default {
     light() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     },
-  },
-  created() {
-    // eslint-disable-next-line no-console
-    console.log(this.$router.options.routes)
   },
 }
 </script>
